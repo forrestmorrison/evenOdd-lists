@@ -20,5 +20,35 @@
         <input type="button" value="Even or Odd?" onclick="">
       </div>
     </form>
+    <section>
+        <h2>Even</h2>
+        <ul id="even"></ul>
+    </section>
+    <section>
+        <h2>Odd</h2>
+        <ul id="odd"></ul>
+    </section>
+    <script>
+        let usersWord = ""
+        
+        function updateWord(element) {
+          usersWord = element.value
+        
+          console.log(usersWord);
+        }
+        let usersWord = "";
+        let oddList = document.getElementById("odd");
+        function handleSubmit() {
+        let newListItem = document.createElement('LI')
+        newListItem.innerText = usersWord
+        if(usersWord.length % 2 === 0) {
+          evenList.appendChild(newListItem)
+        } else {
+          oddList.appendChild(newListItem)
+        }
+        usersWord = ""
+        document.getElementById("even-odd-form").reset()
+        }
+    </script>
 </body>
 </html>
